@@ -1,0 +1,33 @@
+﻿@model BandViewModel;
+@{
+    ViewBag.Title = "Aggiungi Band";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div>
+            Aggiungi Band:
+        </div>
+        <hr>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome, htmlAttributes:new{@Class = "label col-nd-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nome)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Immagine, htmlAttributes:new{@Class = "label col-nd-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Immagine)
+            </div>
+        </div>
+
+        <br>
+        <div class="form=group">
+            <div class="col-md-offset col-md-10">
+                <input type="submit" value="Salva" class="btn btn-default"/>
+            </div>
+        </div>
+    </div>
+}

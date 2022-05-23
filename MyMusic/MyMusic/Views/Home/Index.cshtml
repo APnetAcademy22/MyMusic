@@ -1,39 +1,16 @@
-﻿
-@model IEnumerable<MyMusic.Models.BranoViewModel>;
-@{
-    ViewBag.Title = "MySongs";
+﻿@{
+    ViewData["Title"] = "Home Page";
 }
 
-
-<h1 class="display-4">Le tue canzoni</h1>
-<p class= "text-right">@Html.ActionLink("Aggiungi brano", "Aggiungi")</p>
-    <table class="table">
-        <tr>
-            <th>@Html.DisplayNameFor(model=>model.Titolo)</th>
-            <th>@Html.DisplayNameFor(model=>model.NomeAlbum)</th>
-            <th>@Html.DisplayNameFor(model=>model.NomeBand)</th>
-            <th>@Html.DisplayNameFor(model=>model.Anno)</th>
-        </tr>
-    @if(Model != null && Model.Any() )
-    {
-        foreach(var b in Model)
-        {
-            <tr>
-                <td>@b.Titolo</td>
-                <td>@b.NomeAlbum</td>
-                <td>@b.NomeBand</td>
-                <td>@b.Anno</td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { ID=b.IdBrano}) 
-                </td>
-            </tr>
-        }
-    }
-    else
-    {
-        <td colspan=5 class="text-center"> Nessun Brano Trovato</td>
-    }
-
-    </table>
-
-
+<div class="text-center">
+    <h1 class="display-4">Scegli un'azione</h1>
+    <div>
+        <a href="Home/MieiBrani"><button>Visualizza le tue canzoni</button></a>
+    </div>
+    <div>
+        <a href="Home/AddBrano"><button>Inserisci Brano</button></a>
+        <a href="Home/AddAlbum"><button>Inserisci Album</button></a>
+        <a href="Home/AddArtist"><button>Inserisci Artista</button></a>
+        <a href="Home/AddBand"><button>inserisci Band</button></a>
+    </div>
+</div>
